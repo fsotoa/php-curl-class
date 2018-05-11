@@ -1,0 +1,30 @@
+Buenas tardes.
+
+Tengo un problemaal enviar un POST con PHP-curl, al enviar un curl_setopt_array() con muchas lineas no me graba, he probado todo y no funciona, por ejemplo el código está bien, ya lo he probado con postman y graba todo ok.
+
+$ch2 = curl_init();
+curl_setopt_array
+(
+	$ch2, array
+	(
+		CURLOPT_PORT => "50000",
+		CURLOPT_URL => "https://200.29.175.106:50000/b1s/v1/Orders",
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => "",
+		CURLOPT_MAXREDIRS => 100,
+		CURLOPT_TIMEOUT => 30,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_SSL_VERIFYPEER => 0,
+		CURLOPT_SSL_VERIFYHOST => FALSE,
+		CURLOPT_CUSTOMREQUEST => "POST",
+		CURLOPT_POSTFIELDS => $mPedidos
+		, CURLOPT_HTTPHEADER => $headers
+	)
+);
+$cCargaRespuestaOrdenVenta	=curl_exec($ch2);
+
+En la variable $mPedidos guardo los datos a grabar.
+Slds y gracias
+
+Freddy
+
